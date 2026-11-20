@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  meme.svg — hand-drawn source for meme.png (gta6-meme-x-01).
+
+  A Leonida sunset street: gradient sky, skyline, palms, a neon LEONIDA
+  sign and a GTA VI billboard. Front and centre sits make.fun's ghost —
+  white body, sparkle eyes, magenta star coin held high, phone showing a
+  payout in the other hand — on a pile of gold coins and cash.
+
+  Layout is built for the judge's 480x480 shrink: black caption bands top
+  and bottom, very large bold letters, and textLength pins every caption
+  line to a fixed width so no renderer can overflow it.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a0a4a"/>
+      <stop offset="0.32" stop-color="#7b1e5e"/>
+      <stop offset="0.58" stop-color="#d63d63"/>
+      <stop offset="0.8" stop-color="#ff7e47"/>
+      <stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe259"/>
+      <stop offset="0.65" stop-color="#ffa751"/>
+      <stop offset="1" stop-color="#ff7518"/>
+    </radialGradient>
+    <filter id="blur6" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="ghostClip">
+      <path d="M205,792 L205,598 C205,500 258,450 330,450 C402,450 455,500 455,598 L455,792 C442,816 408,816 393,792 C378,816 344,816 329,792 C314,816 280,816 265,792 C250,816 216,816 205,792 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ======== scene backdrop ======== -->
+  <rect x="0" y="176" width="1024" height="672" fill="url(#skyGrad)"/>
+
+  <!-- little stars in the upper sky -->
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="200" cy="222" r="2.5"/>
+    <circle cx="566" cy="238" r="2"/>
+    <circle cx="842" cy="252" r="2.5"/>
+    <circle cx="344" cy="204" r="2"/>
+    <circle cx="986" cy="316" r="2"/>
+    <circle cx="60" cy="330" r="2"/>
+  </g>
+  <g fill="#ffffff" opacity="0.85">
+    <polygon points="88,218 93,229 104,234 93,239 88,250 83,239 72,234 83,229"/>
+    <polygon points="700,196 704,205 713,209 704,213 700,222 696,213 687,209 696,205"/>
+    <polygon points="952,182 957,194 969,199 957,204 952,216 947,204 935,199 947,194"/>
+  </g>
+
+  <!-- sun, low over the horizon -->
+  <circle cx="512" cy="650" r="115" fill="url(#sunGrad)" opacity="0.96"/>
+
+  <!-- skyline silhouette -->
+  <g fill="#2a1140">
+    <rect x="0" y="548" width="64" height="124"/>
+    <rect x="72" y="584" width="50" height="88"/>
+    <rect x="130" y="516" width="84" height="156"/>
+    <rect x="222" y="566" width="58" height="106"/>
+    <rect x="636" y="560" width="60" height="112"/>
+    <rect x="704" y="522" width="88" height="150"/>
+    <rect x="800" y="578" width="54" height="94"/>
+    <rect x="862" y="540" width="72" height="132"/>
+    <rect x="942" y="566" width="82" height="106"/>
+  </g>
+  <g fill="#ffd76a" opacity="0.75">
+    <rect x="146" y="540" width="8" height="11"/>
+    <rect x="168" y="566" width="8" height="11"/>
+    <rect x="146" y="592" width="8" height="11"/>
+    <rect x="724" y="548" width="8" height="11"/>
+    <rect x="748" y="576" width="8" height="11"/>
+    <rect x="724" y="604" width="8" height="11"/>
+    <rect x="880" y="566" width="8" height="11"/>
+    <rect x="904" y="592" width="8" height="11"/>
+    <rect x="24" y="576" width="8" height="11"/>
+    <rect x="966" y="592" width="8" height="11"/>
+    <rect x="656" y="586" width="8" height="11"/>
+    <rect x="826" y="600" width="8" height="11"/>
+  </g>
+
+  <!-- street -->
+  <rect x="0" y="672" width="1024" height="176" fill="#1d0b2c"/>
+  <rect x="0" y="672" width="1024" height="12" fill="#43205f"/>
+  <ellipse cx="512" cy="702" rx="430" ry="15" fill="#ff7e47" opacity="0.12"/>
+
+  <!-- ======== billboard: GTA VI — OUT NOW ======== -->
+  <g>
+    <rect x="688" y="470" width="18" height="202" fill="#150826"/>
+    <rect x="884" y="470" width="18" height="202" fill="#150826"/>
+    <rect x="540" y="230" width="456" height="248" rx="16" fill="none" stroke="#ff2ea6" stroke-width="10" opacity="0.35" filter="url(#blur6)"/>
+    <rect x="548" y="238" width="440" height="232" rx="12" fill="#0d1633" stroke="#ff2ea6" stroke-width="6"/>
+    <text x="768" y="358" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="102" fill="#ffffff" textLength="392" lengthAdjust="spacingAndGlyphs">GTA <tspan fill="#ff5ea8">VI</tspan></text>
+    <text x="768" y="432" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="50" letter-spacing="8" fill="#ffd76a" textLength="308" lengthAdjust="spacingAndGlyphs">OUT NOW</text>
+  </g>
+
+  <!-- ======== neon LEONIDA sign ======== -->
+  <g>
+    <rect x="174" y="356" width="13" height="196" fill="#150826"/>
+    <rect x="28" y="264" width="316" height="100" rx="18" fill="none" stroke="#22d3ee" stroke-width="9" opacity="0.3" filter="url(#blur6)"/>
+    <rect x="36" y="272" width="300" height="84" rx="16" fill="#12081f" stroke="#22d3ee" stroke-width="5"/>
+    <text x="186" y="330" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="54" letter-spacing="3" fill="#a5f3fc" textLength="262" lengthAdjust="spacingAndGlyphs">LEONIDA</text>
+  </g>
+
+  <!-- ======== palm silhouettes ======== -->
+  <g fill="none" stroke="#170726" stroke-linecap="round">
+    <path d="M36,848 C56,706 82,566 116,452" stroke-width="21"/>
+    <path d="M116,452 C84,414 48,398 14,404" stroke-width="13"/>
+    <path d="M116,452 C96,402 66,376 30,368" stroke-width="13"/>
+    <path d="M116,452 C118,398 138,372 176,362" stroke-width="13"/>
+    <path d="M116,452 C152,408 190,392 226,398" stroke-width="13"/>
+    <path d="M116,452 C158,428 196,432 224,452" stroke-width="13"/>
+    <path d="M996,848 C978,724 956,606 926,502" stroke-width="19"/>
+    <path d="M926,502 C892,462 852,448 814,456" stroke-width="12"/>
+    <path d="M926,502 C910,452 884,428 848,424" stroke-width="12"/>
+    <path d="M926,502 C940,450 968,428 1004,428" stroke-width="12"/>
+  </g>
+  <circle cx="104" cy="464" r="10" fill="#170726"/>
+  <circle cx="130" cy="468" r="9" fill="#170726"/>
+
+  <!-- ======== the loot: coin pile and cash ======== -->
+  <ellipse cx="330" cy="812" rx="200" ry="30" fill="#000000" opacity="0.35"/>
+  <g fill="#f7b731" stroke="#c47f17" stroke-width="3">
+    <circle cx="186" cy="780" r="19"/>
+    <circle cx="222" cy="792" r="25"/>
+    <circle cx="272" cy="802" r="30"/>
+    <circle cx="330" cy="806" r="34"/>
+    <circle cx="390" cy="802" r="29"/>
+    <circle cx="438" cy="790" r="24"/>
+    <circle cx="474" cy="776" r="17"/>
+    <circle cx="246" cy="768" r="22"/>
+    <circle cx="306" cy="776" r="27"/>
+    <circle cx="362" cy="772" r="25"/>
+    <circle cx="416" cy="762" r="20"/>
+    <circle cx="206" cy="758" r="15"/>
+  </g>
+  <g fill="none" stroke="#c47f17" stroke-width="2">
+    <circle cx="272" cy="802" r="19"/>
+    <circle cx="330" cy="806" r="22"/>
+    <circle cx="390" cy="802" r="18"/>
+    <circle cx="306" cy="776" r="16"/>
+  </g>
+  <g transform="rotate(-16 151 748)">
+    <rect x="108" y="728" width="86" height="40" rx="6" fill="#2fbf71" stroke="#1e8a4c" stroke-width="3"/>
+    <text x="151" y="758" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="30" fill="#0b4d26">$</text>
+  </g>
+  <g transform="rotate(13 471 736)">
+    <rect x="428" y="716" width="86" height="40" rx="6" fill="#2fbf71" stroke="#1e8a4c" stroke-width="3"/>
+    <text x="471" y="746" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="30" fill="#0b4d26">$</text>
+  </g>
+
+  <!-- ======== the ghost (make.fun's mascot) ======== -->
+  <!-- raised arm, outlined pass then white pass -->
+  <path d="M440,580 C484,554 502,520 508,480" fill="none" stroke="#c9d8f2" stroke-width="50" stroke-linecap="round"/>
+  <path d="M440,580 C484,554 502,520 508,480" fill="none" stroke="#ffffff" stroke-width="42" stroke-linecap="round"/>
+
+  <!-- the magenta star coin, held high -->
+  <polygon points="512,378 526,413 563,415 535,439 544,476 512,456 480,476 489,439 461,415 498,413" fill="#ff2ea6" stroke="#ff8acb" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="512" cy="432" r="13" fill="#ff6fc0"/>
+  <polygon points="497,392 500,401 509,404 500,407 497,416 494,407 485,404 494,401" fill="#ffffff" opacity="0.9"/>
+
+  <!-- body -->
+  <path d="M205,792 L205,598 C205,500 258,450 330,450 C402,450 455,500 455,598 L455,792 C442,816 408,816 393,792 C378,816 344,816 329,792 C314,816 280,816 265,792 C250,816 216,816 205,792 Z" fill="#ffffff" stroke="#b9c8ea" stroke-width="5" stroke-linejoin="round"/>
+  <g clip-path="url(#ghostClip)">
+    <rect x="205" y="692" width="250" height="128" fill="#e2ebfd" opacity="0.6"/>
+  </g>
+
+  <!-- other arm, down to the phone -->
+  <path d="M214,612 C176,626 156,652 150,684" fill="none" stroke="#c9d8f2" stroke-width="46" stroke-linecap="round"/>
+  <path d="M214,612 C176,626 156,652 150,684" fill="none" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+
+  <!-- phone showing the payout -->
+  <g transform="translate(142 700) rotate(-14)">
+    <rect x="-36" y="-60" width="72" height="120" rx="13" fill="#101018" stroke="#43434f" stroke-width="3"/>
+    <rect x="-28" y="-45" width="56" height="84" rx="6" fill="#0d3830"/>
+    <circle cx="0" cy="-18" r="13" fill="#2fbf71"/>
+    <path d="M-6.5,-18 L-1.5,-12 L7.5,-24" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="20" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="24" fill="#7dffb0">$500</text>
+    <rect x="-12" y="46" width="24" height="5" rx="2.5" fill="#43434f"/>
+  </g>
+
+  <!-- face: sparkle eyes, grin, blush -->
+  <path d="M283,555 C288,576 289,577 310,582 C289,583 288,588 283,609 C278,588 277,583 256,582 C277,577 278,576 283,555 Z" fill="#1b1b26"/>
+  <path d="M377,555 C382,576 383,577 404,582 C383,583 382,588 377,609 C372,588 371,583 350,582 C371,577 372,576 377,555 Z" fill="#1b1b26"/>
+  <circle cx="290" cy="574" r="4" fill="#ffffff"/>
+  <circle cx="384" cy="574" r="4" fill="#ffffff"/>
+  <ellipse cx="240" cy="628" rx="17" ry="10" fill="#ff9ec7" opacity="0.75"/>
+  <ellipse cx="420" cy="628" rx="17" ry="10" fill="#ff9ec7" opacity="0.75"/>
+  <path d="M300,634 C316,660 344,660 360,634" fill="none" stroke="#1b1b26" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- the name, worn like a shirt print -->
+  <text x="330" y="742" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="bold" font-size="31" letter-spacing="1" fill="#ff2ea6">make.fun</text>
+
+  <!-- ======== caption bands ======== -->
+  <rect x="0" y="0" width="1024" height="176" fill="#0a0a0f"/>
+  <rect x="0" y="848" width="1024" height="176" fill="#0a0a0f"/>
+  <g font-family="DejaVu Sans, sans-serif" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <text x="512" y="76" font-size="64" textLength="936" lengthAdjust="spacingAndGlyphs">ROCKSTAR TOOK 13 YEARS</text>
+    <text x="512" y="150" font-size="64" textLength="700" lengthAdjust="spacingAndGlyphs">TO DROP GTA VI</text>
+    <text x="512" y="918" font-size="56" textLength="950" lengthAdjust="spacingAndGlyphs">MY AI AGENT GOT PAID ON MAKE.FUN</text>
+    <text x="512" y="988" font-size="56" textLength="950" lengthAdjust="spacingAndGlyphs">BEFORE THE DOWNLOAD EVEN FINISHED</text>
+  </g>
+</svg>
